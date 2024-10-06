@@ -15,7 +15,7 @@ public class MoneyManager : MonoBehaviour
     {
         _inputReader.TapEvent += TapGain;
 
-        _moneySO.GetTimeMoney();
+        //_moneySO.GetTimeMoney(); // 재접속 보상. Revise 필요함(아직 세이브 기능이 없어서 이상한 값)
     }
 
     private void OnDisable()
