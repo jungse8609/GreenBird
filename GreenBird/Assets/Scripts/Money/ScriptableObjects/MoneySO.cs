@@ -10,7 +10,7 @@ public class MoneySO : DescriptionBaseSO
     //[Header("Broadcasting on")]
     //[SerializeField] private HudEvent HudEvent = default;
 
-    [ReadOnly, SerializeField] private int _fruit;
+    [/*ReadOnly, */SerializeField] private int _fruit;
     public int Fruit => _fruit;
 
     // Fruit Per Hour
@@ -26,7 +26,7 @@ public class MoneySO : DescriptionBaseSO
     {
         _fruit += CalculateAutomaticallyGainedFruit();
 
-        Debug.Log("ÀÚµ¿ µ· ¸Ô±â " + CalculateAutomaticallyGainedFruit());
+        //Debug.Log("ÀÚµ¿ µ· ¸Ô±â " + CalculateAutomaticallyGainedFruit());
     }
 
     public void GetTimeMoney()
@@ -40,12 +40,17 @@ public class MoneySO : DescriptionBaseSO
         _fruit += (sub <= maxTime) ? timeMoney : maxTimeMoney;
         _standard = DateTimeToUnixTimestamp(DateTime.Now);
 
-        Debug.Log("Get Time Money " + timeMoney);
+        //Debug.Log("Get Time Money " + timeMoney);
+    }
+
+    public void Spend(int price)
+    {
+        _fruit = Mathf.CeilToInt(Mathf.Clamp(_fruit - price, 0f, int.MaxValue));
     }
 
     public void ShowMoney()
     {
-        Debug.Log($"³²Àº µ·Àº {_fruit} ÀÔ´Ï´Ù.");
+        //Debug.Log($"³²Àº µ·Àº {_fruit} ÀÔ´Ï´Ù.");
     }
 
     private int CalculateGainedFruit()

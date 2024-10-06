@@ -15,3 +15,4 @@ MonoBehaviour:
   description: "\uACFC\uC77C, \uCF69 \uC7AC\uD654\uB97C \uAD00\uB9AC\uD55C\uB2E4."
   _treeSO: {fileID: 11400000, guid: ec0657a1c212d11418138f49b373d73e, type: 2}
   _nutrientSO: {fileID: 11400000, guid: edbd62443610dbf44995b527ae9dc741, type: 2}
+  _fruit: 0
